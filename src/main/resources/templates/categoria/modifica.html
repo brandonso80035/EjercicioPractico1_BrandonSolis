@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{general/fragmentos::head}"></head>
+<body>
+    <header th:replace="~{general/fragmentos::header}"></header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h2 class="text-center mb-4" th:text="${categoria.id != null} ? 'Modificar Categoría' : 'Nueva Categoría'">Nueva Categoría</h2>
+                
+                <form th:action="@{/categoria/guardar}" method="post">
+                    <input type="hidden" name="id" th:value="${categoria?.id}">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Nombre de la categoría</label>
+                        <input type="text" class="form-control" name="nombre" th:value="${categoria?.nombre}" required>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a th:href="@{/categoria/listado}" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{general/fragmentos::footer}"></footer>
+</body>
+</html>

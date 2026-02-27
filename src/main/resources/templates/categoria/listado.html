@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{general/fragmentos::head}"></head>
+<body>
+    <header th:replace="~{general/fragmentos::header}"></header>
+
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Listado de las categorias</h2>
+            <a th:href="@{/categoria/nuevo}" class="btn btn-primary">+ Nueva Categoría</a>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="categoria : ${categorias}">
+                    <td th:text="${categoria.id}">1</td>
+                    <td th:text="${categoria.nombre}">Cabello</td>
+                    <td>
+                        <a th:href="@{/categoria/modificar(id=${categoria.id})}" class="btn btn-sm btn-warning">Modificar</a>
+                        <a th:href="@{/categoria/eliminar(id=${categoria.id})}" class="btn btn-sm btn-danger" 
+                           onclick="return confirm('¿Está seguro de eliminar?')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer th:replace="~{general/fragmentos::footer}"></footer>
+</body>
+</html>
