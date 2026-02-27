@@ -3,10 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package com.EjercicioPractico1_BrandonSolis.controller;
+package com.EjercicioPractico1_BrandonSolis.ejercicioPractico1.controller;
 
 import com.EjercicioPractico1_BrandonSolis.ejercicioPractico1.domain.Servicio;
-import com.EjercicioPractico1_BrandonSolis.ejercicioPractico1.service.CategoriaService; 
+import com.EjercicioPractico1_BrandonSolis.ejercicioPractico1.service.CategoriaService;
 import com.EjercicioPractico1_BrandonSolis.ejercicioPractico1.service.ServicioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

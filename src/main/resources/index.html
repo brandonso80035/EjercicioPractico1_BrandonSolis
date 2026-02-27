@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{general/fragmentos::head}"></head>
+<body>
+    <header th:replace="~{general/fragmentos::header}"></header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <h1 class="display-4">Bienvenidos a Salon de Belleza Fide</h1>
+                <p class="lead">Tu lugar para el cuidado personal</p>
+                
+                <!-- Promoción especial -->
+                <div class="mt-5">
+                    <h2>Promo Especial para la practica</h2>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3>Promo Novia</h3>
+                            <p>Incluye: Peinado, Maquillaje, Manicure y Pedicure</p>
+                            <p class="text-success h4">¡50% de descuento! Tiene que venir con el novio</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video promocional -->
+                <div class="mt-5">
+                    <h3>Conoce nuestros servicios</h3>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/watch?v=4Y8WIVK3f5o" 
+                                title="Video promocional" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <p class="text-muted mt-2">Profe seguro no le aparezca el video</p>
+                </div>
+
+                <!-- Separador decorativo -->
+                <hr class="my-5">
+
+                <!-- Llamado a la acción -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Ver Categorías</h5>
+                                <p class="card-text">Explora todos nuestros servicios por categoría</p>
+                                <a th:href="@{/categoria/listado}" class="btn btn-primary">Ir a Categorías</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Ver Servicios</h5>
+                                <p class="card-text">Listado completo de servicios disponibles</p>
+                                <a th:href="@{/servicio/listado}" class="btn btn-primary">Ir a Servicios</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{general/fragmentos::footer}"></footer>
+</body>
+</html>
+
+
